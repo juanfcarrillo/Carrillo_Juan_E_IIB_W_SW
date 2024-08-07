@@ -1,0 +1,19 @@
+<h1>Calculadora Angular</h1>
+
+<div>
+  <input [(ngModel)]="num1" type="number" placeholder="Número 1">
+  <input [(ngModel)]="num2" type="number" placeholder="Número 2">
+</div>
+
+<div>
+  <button (click)="calculate('add')">Suma</button>
+  <button (click)="calculate('subtract')">Resta</button>
+  <button (click)="calculate('multiply')">Multiplicación</button>
+  <button (click)="calculate('divide')">División</button>
+  <button (click)="calculate('power')">Potencia</button>
+  <button (click)="calculate('squareRoot')">Raíz Cuadrada</button>
+</div>
+
+<p *ngIf="loading">Calculando...</p>
+<p *ngIf="result !== null">Resultado: {{ result }}</p>
+<p *ngIf="errorMessage" style="color: red;">Error: {{ errorMessage }}</p>
